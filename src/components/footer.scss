@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+
+:root {
+  --heading-font: "Playfair Display", serif;
+  --heading-color: #fff;
+  --paragraph-color: #b8b8b8;
+  --paragraph-font: "Poppins", sans-serif;
+  --other-color: #ffb577;
+  --button-color: #2e2d33;
+  --item-header-color: #c4e4ea;
+}
+.footer-logo {
+    text-align: center;
+  img {
+    margin: 0 auto;
+    display: inline-block; 
+  vertical-align: middle;
+  margin: 3em;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+
+  li {
+    font-family: var(--paragraph-font);
+
+    margin: 3em 1.5em;
+    line-height: 1.5em;
+    a{
+        text-decoration: none;
+        color: var(--paragraph-color);
+    }
+  }
+}
+.footer-social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--paragraph-color);
+    a{
+        text-decoration: none;
+        color: var(--paragraph-color);
+    }
+    .fab{
+        font-size: 1.5em;
+        color: var(--heading-color);
+        margin: 0 1em;
+    }
+}

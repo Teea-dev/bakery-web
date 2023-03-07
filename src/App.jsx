@@ -18,6 +18,8 @@ import coffemaker from "./assets/images/coffeMaker.jpg";
 import beans from "./assets/images/coffebeans.jpg";
 import ham from "./assets/images/ham.jpg";
 import bread from "./assets/images/bread.jpg";
+import Map from "./components/map";
+import Footer from "./components/footer";
 import "./App.scss";
 
 function App() {
@@ -314,6 +316,8 @@ function App() {
           </div>
         </div>
       </div>
+      <Map/>
+      <Footer/>
     </div>
   );
 }

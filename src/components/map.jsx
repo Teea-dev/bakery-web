@@ -1,14 +1,16 @@
 import React from "react";
 import map from "../assets/images/Map.jpg";
+import './map.scss'
 const Map = () => {
   return (
     <>
       <div className="contact-map">
         <div className="contact">
-          <span className="work-hours">
+          <div className="work-hours">
             <h2>Working Hours</h2>
-            <p>Sunday to Saturday 09:00 AM to 11:00 PM</p>
-          </span>
+            <p>Sunday to Saturday 
+                <br /> 09:00 AM to 11:00 PM</p>
+          </div>
           <span className="location">
             <h2>Location</h2>
             <p>
