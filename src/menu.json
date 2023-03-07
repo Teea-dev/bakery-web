@@ -1,0 +1,64 @@
+{
+  "Cofee": {
+    "product": "Cofee",
+    "price": "08.85 ",
+    "image": "./assets/images/latte.jpg"
+  },
+  "Choco cup cake": {
+    "product": "Choco cup cake",
+    "price": "4.85 ",
+    "image": "./assets/images/cupcake.jpg"
+  },
+  "Chicken burger": {
+    "product": "Chicken burger",
+    "price": "8.85 ",
+    "image": "./assets/images/kingsize.jpg"
+  },
+  
+  "French fries": {
+    "product": "French fries",
+    "price": "7.85 ",
+    "image": "./assets/images/dip.jpg"
+  },
+  "Sandwitch": {
+    "product": "Sandwitch",
+    "price": "3.97 ",
+    "image": "./assets/images/sandwich.jpg"
+  },
+  "Chinese soup": {
+    "product": "Chinese soup",
+    "price": "8.85 ",
+    "image": "./assets/images/ramen.jpg"
+  },
+  "Quafe Brade": {
+    "product": "Quafe Brade",
+    "price": "7.85 ",
+    "image": "./assets/images/quafe.png"
+  },
+
+  "Dalgona Cofee": {
+    "product": "Dalgona Cofee",
+    "price": "4.97 ",
+    "image": "./assets/images/dalgona.png"
+  },
+  "Chowmin Noodle": {
+    "product": "Chowmin Noodle",
+    "price": "8.85 ",
+    "image": "./assets/images/chowmin.png"
+  },
+  "Cocka Cola": {
+    "product": "Cocka Cola",
+    "price": "7.85 ",
+    "image": "./assets/images/coke.png"
+  },
+  "Fruit salad": {
+    "product": "Fruit salad",
+    "price": "3.97 ",
+    "image": "./assets/images/fruitsalad.png"
+  },
+  "Cocktail": {
+    "product": "Cocktail",
+    "price": "8.85 ",
+    "image": "./assets/images/cocktail.png"
+  }
+}
