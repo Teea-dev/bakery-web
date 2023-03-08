@@ -18,6 +18,8 @@ import menu from "../menu.json";
 import { Link } from "react-router-dom";
 
 import "../App.scss";
+import Menu from "./menu";
+import Aboutpage from "./About";
 
 function App() {
   return (
@@ -294,6 +296,8 @@ function App() {
       </div>
       <Map />
       <Footer />
+      <Aboutpage />
+      {/* <Menu/> */}
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import menu from "../menu.json";
 import "../App.scss";
+import Map from "../components/map";
+import Footer from "../components/footer";
 
 const Menu = () => {
   return (
@@ -22,7 +24,7 @@ const Menu = () => {
         </div>
       </div>
 
-      <ul>
+      <ul className="menu-ul">
         <li>All</li>
         <li>Fast Food</li>
         <li> Cofee</li>
@@ -46,6 +48,8 @@ const Menu = () => {
           </div>
         ))}
       </div>
+      <Map/>
+      <Footer/>
     </>
   );
 };
