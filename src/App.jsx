@@ -8,18 +8,14 @@ import coffe from "./assets/images/coffe.svg";
 import grill from "./assets/images/grill.svg";
 import burger from "./assets/images/burger.svg";
 import snack from "./assets/images/snack.svg";
-import latte from "./assets/images/latte.jpg";
-import cupcake from "./assets/images/cupcake.jpg";
-import bigburger from "./assets/images/kingsize.jpg";
-import fries from "./assets/images/dip.jpg";
-import sandwich from "./assets/images/sandwich.jpg";
-import ramen from "./assets/images/ramen.jpg";
 import coffemaker from "./assets/images/coffeMaker.jpg";
 import beans from "./assets/images/coffebeans.jpg";
 import ham from "./assets/images/ham.jpg";
 import bread from "./assets/images/bread.jpg";
 import Map from "./components/map";
 import Footer from "./components/footer";
+import menu from "./menu.json";
+
 import "./App.scss";
 
 function App() {
@@ -104,7 +100,10 @@ function App() {
       <div className="service">
         <div className="service-1">
           <div className="cake">
-            <img src={cake} alt="" />
+            <div className="icon">
+              <img src={cake} alt="" />
+            </div>
+
             <h2>Quafe Cake</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -112,7 +111,10 @@ function App() {
             </p>
           </div>
           <div className="cocktail">
-            <img src={cocktail} alt="" />
+            <div className="icon">
+              <img src={cocktail} alt="" />
+            </div>
+
             <h2>Cocktails</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -123,7 +125,9 @@ function App() {
 
         <div className="service-2">
           <div className="coffe">
-            <img src={coffe} alt="" />
+            <div className="icon">
+              <img src={coffe} alt="" />
+            </div>
             <h2>Coffe</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -131,7 +135,9 @@ function App() {
             </p>
           </div>
           <div className="grill">
-            <img src={grill} alt="" />
+            <div className="icon">
+              <img src={grill} alt="" />
+            </div>
             <h2>Grill</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -142,7 +148,9 @@ function App() {
 
         <div className="service-3">
           <div className="burger">
-            <img src={burger} alt="" />
+            <div className="icon">
+              <img src={burger} alt="" />
+            </div>
             <h2>Burger</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -150,7 +158,9 @@ function App() {
             </p>
           </div>
           <div className="snack">
-            <img src={snack} alt="" />
+            <div className="icon">
+              <img src={snack} alt="" />
+            </div>
             <h2>Snack</h2>
             <p>
               Through True Rich Attended does no end it his mother since
@@ -176,62 +186,25 @@ function App() {
           </p>
         </div>
       </div>
+
       <div className="menu">
-        <div className="menu-item1">
-          <span className="card">
-            <img src={latte} alt="" />
-            <div className="description">
-              <h3>Drp Coffe</h3>
-              <p>$08.85</p>
+        {Object.keys(menu)
+          .slice(0, 6)
+          .map((key) => (
+            <div key={key}>
+              <div className="menu-item">
+                <span className="card">
+                  <img src={menu[key].image} alt={menu[key].product} />
+                  <div className="description">
+                    <h3>{menu[key].product}</h3>
+                    <p>${menu[key].price}</p>
+                  </div>
+                </span>
+              </div>
             </div>
-          </span>
-        </div>
-        <div className="menu-item-2">
-          <span className="card">
-            <img src={cupcake} alt="" />
-            <div className="description">
-              <h3>Choco Cupcake </h3>
-              <p>$4.85</p>
-            </div>
-          </span>
-        </div>
-        <div className="menu-item3">
-          <span className="card">
-            <img src={bigburger} alt="" />
-            <div className="description">
-              <h3>Chicken burger</h3>
-              <p>$8.85</p>
-            </div>
-          </span>
-        </div>
-        <div className="menu-item-4">
-          <span className="card">
-            <img src={fries} alt="" />
-            <div className="description">
-              <h3>French fries</h3>
-              <p>$7.85</p>
-            </div>
-          </span>
-        </div>
-        <div className="menu-item-5">
-          <span className="card">
-            <img src={sandwich} alt="" />
-            <div className="description">
-              <h3>Sandwitch</h3>
-              <p>$3.97</p>
-            </div>
-          </span>
-        </div>
-        <div className="menu-item-6">
-          <span className="card">
-            <img src={ramen} alt="" />
-            <div className="description">
-              <h3>Chinese soup</h3>
-              <p>$8.85</p>
-            </div>
-          </span>
-        </div>
+          ))}
       </div>
+
       <div className="view-menu">
         <button>View menu</button>
       </div>
@@ -280,12 +253,12 @@ function App() {
             </div>
           </div>
           <div className="cards">
-          <div>
+            <div>
               <span>
                 <div className=" blog-description">
                   <h4 className="blog-date">21 Jun 2021</h4>
                   <h3 className="blog-title">
-                  The Best Way to Store Fresh Herbs
+                    The Best Way to Store Fresh Herbs
                   </h3>
                   <p>
                     It is a long established fact that a reader will be
@@ -297,13 +270,13 @@ function App() {
             </div>
           </div>
           <div className="cards">
-          <div>
+            <div>
               <span>
                 <div className=" blog-description">
                   <h4 className="blog-date">21 Jun 2021</h4>
                   <h3 className="blog-title">
-                  5 ways to prepare  <br />
-                  porridge
+                    5 ways to prepare <br />
+                    porridge
                   </h3>
                   <p>
                     It is a long established fact that a reader will be
@@ -316,8 +289,8 @@ function App() {
           </div>
         </div>
       </div>
-      <Map/>
-      <Footer/>
+      <Map />
+      <Footer />
     </div>
   );
 }
