@@ -296,7 +296,7 @@ function App() {
       </div>
       <Map />
       <Footer />
-      <Aboutpage />
+      {/* <Aboutpage /> */}
       {/* <Menu/> */}
     </div>
   );

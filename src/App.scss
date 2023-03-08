@@ -360,6 +360,7 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 5em;
+  margin: 5em ;
   h1{
     font-family: var(--heading-font);
     color: var(--heading-color);

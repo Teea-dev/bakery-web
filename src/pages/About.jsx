@@ -2,6 +2,8 @@ import React from "react";
 import "../App.scss";
 import Aboutus from "../assets/images/About.png";
 import About2 from "../assets/images/About2.png";
+import Footer from "../components/footer";
+import Map from "../components/map";
 
 const About = () => {
   return (
@@ -107,7 +109,7 @@ const About = () => {
       </div>
       <div className="values">
         <div className="core-values">
-          <h1>Things Our Company stands for</h1>
+          <h1>Things Our Company <br /> stands for</h1>
         </div>
         <div className="list-of-values">
           <h2>
@@ -126,6 +128,8 @@ const About = () => {
           </p>
         </div>
       </div>
+        <Map/>
+        <Footer/>
     </>
   );
 };
