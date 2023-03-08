@@ -1,6 +1,6 @@
 import React from "react";
 import menu from "../menu.json";
-import "./App.scss";
+import "../App.scss";
 
 const Menu = () => {
   return (
@@ -22,7 +22,6 @@ const Menu = () => {
         </div>
       </div>
 
-
       <ul>
         <li>All</li>
         <li>Fast Food</li>
@@ -31,6 +30,7 @@ const Menu = () => {
         <li>Quafe Cake</li>
         <li>Snacks</li>
       </ul>
+      
       <div className="menu">
         {Object.keys(menu).map((key) => (
           <div key={key}>

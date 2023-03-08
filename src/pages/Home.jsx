@@ -1,22 +1,23 @@
 import React from "react";
-import Hero from "./assets/images/Header.jpg";
-import About from "./assets/images/about1.png";
-import About2 from "./assets/images/about2.jpg";
-import cake from "./assets/images/cake.svg";
-import cocktail from "./assets/images/cocktail.svg";
-import coffe from "./assets/images/coffe.svg";
-import grill from "./assets/images/grill.svg";
-import burger from "./assets/images/burger.svg";
-import snack from "./assets/images/snack.svg";
-import coffemaker from "./assets/images/coffeMaker.jpg";
-import beans from "./assets/images/coffebeans.jpg";
-import ham from "./assets/images/ham.jpg";
-import bread from "./assets/images/bread.jpg";
-import Map from "./components/map";
-import Footer from "./components/footer";
-import menu from "./menu.json";
+import Hero from "../assets/images/Header.jpg";
+import About from "../assets/images/about1.png";
+import About2 from "../assets/images/about2.jpg";
+import cake from "../assets/images/cake.svg";
+import cocktail from "../assets/images/cocktail.svg";
+import coffe from "../assets/images/coffe.svg";
+import grill from "../assets/images/grill.svg";
+import burger from "../assets/images/burger.svg";
+import snack from "../assets/images/snack.svg";
+import coffemaker from "../assets/images/coffeMaker.jpg";
+import beans from "../assets/images/coffebeans.jpg";
+import ham from "../assets/images/ham.jpg";
+import bread from "../assets/images/bread.jpg";
+import Map from "../components/map";
+import Footer from "../components/footer";
+import menu from "../menu.json";
+import { Link } from "react-router-dom";
 
-import "./App.scss";
+import "../App.scss";
 
 function App() {
   return (
@@ -206,7 +207,9 @@ function App() {
       </div>
 
       <div className="view-menu">
-        <button>View menu</button>
+        <Link to="/menu">
+          <button>View menu</button>
+        </Link>
       </div>
       <div className="inspirational-quote">
         <div className="quote">
