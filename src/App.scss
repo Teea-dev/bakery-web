@@ -203,7 +203,6 @@
     background: #1f1d21;
     padding: 15px;
   }
- 
 }
 .view-menu {
   display: flex;
@@ -308,61 +307,96 @@
     line-height: 1.5em;
   }
 }
-.history{
+.history {
   background: #1f1d21;
-  .main-history{
+  .main-history {
     padding: 0 3em;
   }
-  .ourhistory{
+  .ourhistory {
     margin: 3em 0px;
   }
-  .banner{
-    background: url('./assets/images/overlay.png'), url('./assets/images/BG.jpg');
+  .banner {
+    background: url("./assets/images/overlay.png"),
+      url("./assets/images/BG.jpg");
     background-size: cover;
-    background-position: top , center;
+    background-position: top, center;
     background-repeat: no-repeat;
     display: flex;
     // height: 46vh;
     justify-content: center;
     // margin: 2em;
     flex-direction: column;
-    h1{
+    h1 {
       font-family: var(--heading-font);
       color: var(--heading-color);
       font-size: 46px;
       margin-bottom: 1em;
-      .newyork{
+      .newyork {
         font-family: var(--heading-font);
         color: var(--other-color);
       }
     }
-    p{
+    p {
       font-family: var(--paragraph-font);
       color: var(--paragraph-color);
       margin-bottom: 3em;
     }
   }
-  .years{
+  .years {
     display: flex;
     gap: 20px;
     margin-bottom: 2em;
-    h2{
+    h2 {
       font-family: var(--paragraph-font);
     }
-    h3{
+    h3 {
       font-family: var(--heading-font);
       color: var(--heading-color);
       margin: 1em 0px;
     }
   }
 }
-.values{
+.values {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5em;
-  margin: 5em ;
-  h1{
+  margin: 5em;
+  h1 {
     font-family: var(--heading-font);
     color: var(--heading-color);
+  }
+}
+.story-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 250px);
+  gap: 3em;
+  .newyork {
+    font-family: var(--heading-font);
+    color: var(--other-color);
+  }
+  .story-intro {
+    h1 {
+      font-family: var(--heading-font);
+      color: var(--heading-color);
+      font-size: 46px;
+      margin-bottom: 1em;
+    }
+    p {
+      font-family: var(--paragraph-font);
+      color: var(--paragraph-color);
+      margin-bottom: 3em;
+    }
+      .newyork {
+        font-family: var(--heading-font);
+        color: var(--other-color);
+      }
+  }
+  .story-heading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image1 {
+    padding-top: 5em;
   }
 }
