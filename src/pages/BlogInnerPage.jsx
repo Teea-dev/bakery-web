@@ -2,8 +2,8 @@ import React from "react";
 import profileImage from "../assets/images/profileImage.png";
 import BlogImage from "../assets/images/Blog Image.png";
 import "../App.scss";
-import Map from "../components/Map";
-import Footer from "../components/Footer";
+import Map from "../components/map";
+import Footer from "../components/footer";
 const Blogpage = () => {
   return (
     <>

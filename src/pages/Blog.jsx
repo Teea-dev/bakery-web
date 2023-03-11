@@ -8,8 +8,8 @@ import articleimage2 from "../assets/images/articleimage2.png";
 import articleimage3 from "../assets/images/articleimage3.png";
 import articleimage4 from "../assets/images/articleimage4.png";
 import Arrow from "../assets/images/Arrow.svg";
-import Map from "../components/Map";
-import Footer from "../components/Footer";
+import Map from "../components/map";
+import Footer from "../components/footer";
 import "../App.scss";
 const Blog = () => {
   return (

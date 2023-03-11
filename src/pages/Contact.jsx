@@ -2,8 +2,8 @@ import React from "react";
 
 import ContactImage1 from "../assets/images/Contact Image 1.png";
 import ContactImage2 from "../assets/images/Contact Image 2.png";
-import Map from "../components/Map";
-import Footer from "../components/Footer";
+import Map from "../components/map";
+import Footer from "../components/footer";
 
 import "../App.scss";
 const Contact = () => {
