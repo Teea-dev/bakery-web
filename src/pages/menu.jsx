@@ -23,7 +23,6 @@ const Menu = () => {
           </p>
         </div>
       </div>
-
       <ul className="menu-ul">
         <li>All</li>
         <li>Fast Food</li>
@@ -32,7 +31,6 @@ const Menu = () => {
         <li>Quafe Cake</li>
         <li>Snacks</li>
       </ul>
-      
       <div className="menu">
         {Object.keys(menu).map((key) => (
           <div key={key}>
@@ -48,8 +46,8 @@ const Menu = () => {
           </div>
         ))}
       </div>
-      <Map/>
-      <Footer/>
+      <Map />
+      <Footer />
     </>
   );
 };

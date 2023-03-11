@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 import "../App.scss";
 // import pages
-import Menu from "./menu";
+import Menu from "./Menu";
 import Aboutpage from "./About";
 import Ourstory from "./Ourstory";
 import Blog from "./Blog";
@@ -303,10 +303,10 @@ function App() {
       <Footer />
       {/* <Ourstory/> */}
       {/* <Aboutpage /> */}
-      {/* <Menu/> */}
+      <Menu/>
       {/* <Blog/> */}
       {/* <Blogpage/> */}
-      <Contact/> 
+      {/* <Contact/>  */}
     </div>
   );
 }
