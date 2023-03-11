@@ -21,6 +21,7 @@ import "../App.scss";
 import Menu from "./menu";
 import Aboutpage from "./About";
 import Ourstory from "./Ourstory";
+import Blog from "./Blog";
 
 function App() {
   return (
@@ -300,6 +301,7 @@ function App() {
       {/* <Ourstory/> */}
       {/* <Aboutpage /> */}
       {/* <Menu/> */}
+      <Blog/>
     </div>
   );
 }
