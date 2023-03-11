@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.scss";
-import Story1 from "../assets/images/image 1.png";
-import Story2 from "../assets/images/image 2.png";
+import Story1 from "../assets/images/Image1.png";
+import Story2 from "../assets/images/Image2.png";
 import Footer from "../components/footer";
 import Map from "../components/map";
 const Ourstory = () => {

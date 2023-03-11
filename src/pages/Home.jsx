@@ -24,6 +24,7 @@ import Aboutpage from "./About";
 import Ourstory from "./Ourstory";
 import Blog from "./Blog";
 import Blogpage from "./BlogInnerPage";
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -305,6 +306,7 @@ function App() {
       {/* <Menu/> */}
       {/* <Blog/> */}
       {/* <Blogpage/> */}
+      <Contact/> 
     </div>
   );
 }
