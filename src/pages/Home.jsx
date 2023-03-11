@@ -18,10 +18,12 @@ import menu from "../menu.json";
 import { Link } from "react-router-dom";
 
 import "../App.scss";
+// import pages
 import Menu from "./menu";
 import Aboutpage from "./About";
 import Ourstory from "./Ourstory";
 import Blog from "./Blog";
+import Blogpage from "./BlogInnerPage";
 
 function App() {
   return (
@@ -301,7 +303,8 @@ function App() {
       {/* <Ourstory/> */}
       {/* <Aboutpage /> */}
       {/* <Menu/> */}
-      <Blog/>
+      {/* <Blog/> */}
+      {/* <Blogpage/> */}
     </div>
   );
 }
