@@ -38,3 +38,11 @@ p{
        margin-bottom: .5em;
     }
 }
+
+@media screen and (max-width: 480px){
+    .contact-map{
+        grid-template-columns: 1fr;
+    }
+}
+    
+
