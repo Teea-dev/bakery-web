@@ -249,6 +249,8 @@
     img {
       width: 100%;
       height: fit-content;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
