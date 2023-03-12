@@ -760,6 +760,9 @@
 }
 .inspirational-quote{
   grid-template-columns: 1fr;
+  .inspirational-image{
+    height: max-content;
+  }
 }
 
 }
