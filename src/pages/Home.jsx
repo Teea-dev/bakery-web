@@ -184,7 +184,7 @@ function App() {
         <div className="menu-intro">
           <h3> OUR MENU</h3>
           <h1>
-            Discover our menu <br /> chart
+            Discover our menu chart
           </h1>
           <h4>Most popular picks</h4>
         </div>
