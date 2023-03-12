@@ -3,10 +3,11 @@ import menu from "../menu.json";
 import "../App.scss";
 import Map from "../components/map";
 import Footer from "../components/footer";
-
+import Navbar from "../components/Nav";
 const Menu = () => {
   return (
     <>
+      <Navbar/>
       <div className="menu-heading">
         <div className="menu-intro">
           <h3> OUR MENU</h3>

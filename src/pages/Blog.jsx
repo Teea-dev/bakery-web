@@ -11,10 +11,12 @@ import Arrow from "../assets/images/Arrow.svg";
 import Map from "../components/map";
 import Footer from "../components/footer";
 import "../App.scss";
+import Navbar from "../components/Nav";
 const Blog = () => {
   return (
     <>
       <div className="blog-container">
+        <Navbar/>
         <div className="blog-intro">
           <h1>Featured Blogs</h1>
         </div>

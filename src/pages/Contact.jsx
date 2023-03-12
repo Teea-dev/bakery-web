@@ -6,9 +6,11 @@ import Map from "../components/map";
 import Footer from "../components/footer";
 
 import "../App.scss";
+import Navbar from "../components/Nav";
 const Contact = () => {
   return (
     <>
+    <Navbar/>
       <div className="contact-us">
         <div className="contact-form">
           <div className="contact-form-text">

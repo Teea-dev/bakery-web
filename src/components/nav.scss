@@ -1,0 +1,21 @@
+.NavbarContent{
+    display: flex;
+    align-items: center;
+    color: var(--heading-color);
+    margin: 0px 0px 3em;
+    .links{
+        ul{
+            display: flex;
+            list-style: none;
+            li{
+              
+              
+                    &:hover{
+                        cursor: pointer;
+                        color: var(--other-color);
+                    }
+                
+            }
+        }
+    }
+}

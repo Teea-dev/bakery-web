@@ -25,10 +25,12 @@ import Ourstory from "./Ourstory";
 import Blog from "./Blog";
 import Blogpage from "./BlogInnerPage";
 import Contact from "./Contact";
+import Navbar from "../components/Nav";
 
 function App() {
   return (
     <div className="container">
+      <Navbar/>
       <div className="hero">
         <div className="hero-text">
           <h1>We serve high quality foods of all kinds.</h1>
@@ -303,7 +305,7 @@ function App() {
       <Footer />
       {/* <Ourstory/> */}
       {/* <Aboutpage /> */}
-      <Menu/>
+      {/* <Menu/> */}
       {/* <Blog/> */}
       {/* <Blogpage/> */}
       {/* <Contact/>  */}

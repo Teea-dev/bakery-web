@@ -4,9 +4,11 @@ import BlogImage from "../assets/images/Blog Image.png";
 import "../App.scss";
 import Map from "../components/map";
 import Footer from "../components/footer";
+import Navbar from "../components/Nav";
 const Blogpage = () => {
   return (
     <>
+    <Navbar/>
       <div className="blog-page">
         <div className="profile-heading">
           <div className="image">

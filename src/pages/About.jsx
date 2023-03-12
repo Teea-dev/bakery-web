@@ -4,10 +4,12 @@ import Aboutus from "../assets/images/About.png";
 import About2 from "../assets/images/About2.png";
 import Footer from "../components/footer";
 import Map from "../components/map";
+import Navbar from "../components/Nav";
 
 const About = () => {
   return (
     <>
+    <Navbar/>
       <div className="about-us">
         <div className="item-1">
           <h3 className="about">KNOW MORE ABOUT US</h3>
