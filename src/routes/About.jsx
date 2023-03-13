@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.scss";
 import Aboutus from "../assets/images/About.png";
 import About2 from "../assets/images/About2.png";
@@ -25,7 +26,7 @@ const About = () => {
             Through True Rich Attended does no end it his mother since
             favourable.
           </p>
-          <button>View menu</button>
+         <Link to="/menu" className="button">View Menu</Link>
         </div>
         <div className="item">
           <h3>2014</h3>
