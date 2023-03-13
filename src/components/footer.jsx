@@ -5,6 +5,7 @@ import { FaFacebookF} from "react-icons/fa";
 import { FaTwitter} from "react-icons/fa";
 import { FaInstagram} from "react-icons/fa";
 import { FaLinkedin} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,22 +17,22 @@ const Footer = () => {
         <div className="footer-links">
           <ul>
             <li>
-              <a href="#">Home</a>
+             <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">Menu</a>
+              <Link to="/menu">Menu</Link>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <Link to="/about">About Us</Link>
             </li>
             <li>
-              <a href="#">Our story</a>
+              <Link to="/story">Our Story</Link>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>

@@ -15,7 +15,7 @@ import Navbar from "../components/Nav";
 const Blog = () => {
   return (
     <>
-      <div className="blog-container">
+      <div className="container">
         <Navbar/>
         <div className="blog-intro">
           <h1>Featured Blogs</h1>
@@ -202,9 +202,10 @@ const Blog = () => {
             </div>
           </div>
         </div>
-      </div>
+      
       <Map/>
       <Footer/>
+    </div>
     </>
   );
 };

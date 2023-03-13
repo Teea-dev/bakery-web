@@ -3,6 +3,7 @@ import "./nav.scss";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo.svg";
 
+
 function Navbar() {
   const [visibility, setVisibility] = useState(false);
   useEffect(() => {
@@ -19,22 +20,22 @@ function Navbar() {
           <div className="links">
             <ul className={visibility ? "visibleNav" : "inVisibleNav"}>
               <li className="mercury ">
-                <span>Home</span>
+                <Link to="/">Home</Link>
               </li>
               <li className="venus ">
-                <span>Menu</span>
+                <Link to="/menu">Menu</Link>
               </li>
               <li className="earth ">
-                <span>About Us</span>
+                <Link to="/about">About Us</Link>
               </li>
               <li className=" ">
-                <span className="mars">Our Story</span>
+                <Link to="/story">Our Story</Link>
               </li>
               <li className=" jupiter ">
-                <span>Blog</span>
+                <Link to="/blog">Blog</Link>  
               </li>
               <li className=" saturn ">
-                <span>Contact</span>
+                <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>

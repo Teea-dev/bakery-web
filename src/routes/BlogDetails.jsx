@@ -5,7 +5,7 @@ import "../App.scss";
 import Map from "../components/map";
 import Footer from "../components/footer";
 import Navbar from "../components/Nav";
-const Blogpage = () => {
+const BlogDetails = () => {
   return (
     <>
     <Navbar/>
@@ -82,4 +82,4 @@ const Blogpage = () => {
   );
 };
 
-export default Blogpage;
+export default BlogDetails;

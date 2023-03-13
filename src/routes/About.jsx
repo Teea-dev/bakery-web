@@ -9,6 +9,7 @@ import Navbar from "../components/Nav";
 const About = () => {
   return (
     <>
+      <div className="container">
     <Navbar/>
       <div className="about-us">
         <div className="item-1">
@@ -132,6 +133,7 @@ const About = () => {
       </div>
         <Map/>
         <Footer/>
+      </div>
     </>
   );
 };

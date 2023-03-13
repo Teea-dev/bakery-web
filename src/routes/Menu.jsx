@@ -7,6 +7,7 @@ import Navbar from "../components/Nav";
 const Menu = () => {
   return (
     <>
+    <div className="container">
       <Navbar/>
       <div className="menu-heading">
         <div className="menu-intro">
@@ -49,6 +50,7 @@ const Menu = () => {
       </div>
       <Map />
       <Footer />
+    </div>
     </>
   );
 };

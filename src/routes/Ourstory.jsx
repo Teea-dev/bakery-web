@@ -5,9 +5,10 @@ import Story2 from "../assets/images/Image2.png";
 import Footer from "../components/footer";
 import Map from "../components/map";
 import Navbar from "../components/Nav";
-const Ourstory = () => {
+const Story = () => {
   return (
     <>
+      <div className="container">
     <Navbar/>
       <div className="story-container">
         <div className="story-intro">
@@ -64,8 +65,9 @@ const Ourstory = () => {
       </div>
       <Map />
       <Footer />
+    </div>
     </>
   );
 };
 
-export default Ourstory;
+export default Story;

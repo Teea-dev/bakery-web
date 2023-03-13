@@ -10,6 +10,7 @@ import Navbar from "../components/Nav";
 const Contact = () => {
   return (
     <>
+    <div className="container">
     <Navbar/>
       <div className="contact-us">
         <div className="contact-form">
@@ -53,6 +54,7 @@ const Contact = () => {
       </div>
       <Map/>
         <Footer/>
+    </div>
     </>
   );
 };

@@ -23,14 +23,14 @@ import Menu from "./Menu";
 import Aboutpage from "./About";
 import Ourstory from "./Ourstory";
 import Blog from "./Blog";
-import Blogpage from "./BlogInnerPage";
+import Blogpage from "./BlogDetails";
 import Contact from "./Contact";
 import Navbar from "../components/Nav";
 
-function App() {
+function Home() {
   return (
     <div className="container">
-      <Navbar/>
+      <Navbar />
       <div className="hero">
         <div className="hero-text">
           <h1>We serve high quality foods of all kinds.</h1>
@@ -38,7 +38,9 @@ function App() {
             Our food is made with fresh ingredients and we have a great variety
             of dishes
           </p>
-          <button>View menu</button>
+          <Link className="button" to="/menu">
+          View menu
+        </Link>
 
           <h3>Opening Times</h3>
           <p>Sunday - Saturday | 9am - 11pm</p>
@@ -65,7 +67,9 @@ function App() {
             Through True Rich Attended does no end it his mother since
             favourable.
           </p>
-          <button>View menu</button>
+          <Link className="button" to="/menu">
+          View menu
+        </Link>
         </div>
         <div className="item">
           <h3>2014</h3>
@@ -183,9 +187,7 @@ function App() {
       <div className="menu-heading">
         <div className="menu-intro">
           <h3> OUR MENU</h3>
-          <h1>
-            Discover our menu chart
-          </h1>
+          <h1>Discover our menu chart</h1>
           <h4>Most popular picks</h4>
         </div>
         <div className="side-text">
@@ -216,8 +218,8 @@ function App() {
       </div>
 
       <div className="view-menu">
-        <Link to="/menu">
-          <button>View menu</button>
+        <Link className="button" to="/menu">
+          View menu
         </Link>
       </div>
       <div className="inspirational-quote">
@@ -309,8 +311,10 @@ function App() {
       {/* <Blog/> */}
       {/* <Blogpage/> */}
       {/* <Contact/>  */}
+      {/* <Routes> */}
+      
     </div>
   );
 }
 
-export default App;
+export default Home;
