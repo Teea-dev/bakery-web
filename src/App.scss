@@ -822,14 +822,20 @@
   .featured-blog {
     grid-template-columns: 1fr;
     .items {
+      .blog-image{
+        object-fit: cover;
+        object-position: center;
+      }
       .text {
         h3 {
           font-size: 13px;
           text-align: left;
+          margin-bottom: 2em;
         }
         p {
           font-size: 12px;
           text-align: left;
+          
         }
       }
     }
@@ -840,10 +846,11 @@
       .articles{
         display: block;
         .profile{
+          display: block;
           .profile-name{
             .more{
               h2,h3{
-                text-align: left;
+                text-align: center;
                 margin: 1em;
               }
             }
