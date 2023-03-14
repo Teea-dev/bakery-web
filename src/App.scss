@@ -821,10 +821,24 @@
   }
   .featured-blog {
     grid-template-columns: 1fr;
+    .items-1{
+      .profile{
+        flex-direction: column;
+        .profile-name{
+          flex-direction: column;
+        }
+      }
+      .another-container{
+
+      }
+    }
     .items {
       .blog-image{
-        object-fit: cover;
-        object-position: center;
+        img{
+
+          object-fit: cover;
+          object-position: center;
+        }
       }
       .text {
         h3 {
@@ -835,7 +849,7 @@
         p {
           font-size: 12px;
           text-align: left;
-          
+
         }
       }
     }

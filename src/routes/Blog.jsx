@@ -24,7 +24,7 @@ const Blog = () => {
           <div className="items-1">
             <div className="another-container">
               <h1>
-                A guide to Thai <br /> Curry
+                A guide to Thai Curry
               </h1>
               <div className="profile">
                 <div className="profile-name">
