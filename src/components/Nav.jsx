@@ -46,131 +46,220 @@ function Navbar() {
 }
 
 export default Navbar;
-{/* <nav className=" nav-bar">
-<a href="/">
-  <img src={Logo} className="logo d-none d-md-block" alt="logo" />
-  <img
-    src={Small}
-    className="logo d-block d-md-none small-logo"
-    alt="logo"
-  />
-</a>
-<div className="toggle-button" onClick={openNav}>
-  <span className="bar"></span>
-  <span className="bar"></span>
-  <span className="bar"></span>
-</div>
-
-<div className= {`nav-links ${open ? "nav-links active" : " nav-links "}` }>
-  <ul>
-    <li>
-      <a href="/"  className="active " title="Homepage">
-        Home
-      </a>
-    </li> */}
-//     <li>
-//       <a href="/about.html" title="Menu">
-//         About
-//       </a>
-//     </li>
-//     <li>
-//       <a href="/work.html" title="About Us">
-//         Work
-//       </a>
-//     </li>
-//     <li>
-//       <a href="/contact.html" title="">
-//         Contact
-//       </a>
-//     </li>
-//     <li>
-//       <a href="/contact.html" title="Contact-page">
-//         Contact
-//       </a>
-//     </li>
-//     <li>
-//       <a href="/contact.html" title="Contact-page">
-//         Contact
-//       </a>
-//     </li>
-//     <li>
-//       <a href="/contact.html" title="Contact-page">
-//         Contact
-//       </a>
-//     </li>
-//   </ul>
-// </div>
-// </nav>
-// </div>
-
-// const openNav = () =>{
-//   setOpen( !open);
-
-//   }
 
 
-// STYLES FOR THE NAVBAR
-// .nav-bar {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 80px;
-//   background-color: #fff;
-//   z-index: 100;
-//   padding: 0 20px;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   transition: all 0.5s ease;
+// import { Box, Flex, Text, IconButton, useDisclosure, ListItem, VStack, UnorderedList, useBreakpointValue } from '@chakra-ui/react'
+// import * as React from 'react'
+// import { FiMenu } from 'react-icons/fi'
+// import Link from 'next/link'
+// import Logo from '../assets/theNoogles2.png'
+// import { Fade } from 'react-reveal'
+// import { useRouter } from "next/router";
+// import Image from 'next/image'
+// import { FaDiscord, FaFileAlt, FaTwitter } from 'react-icons/fa'
+// import { BsXLg } from "react-icons/bs";
+
+// const Navbar = () => {
+//   const router = useRouter();
+//   const isDesktop = useBreakpointValue({ base: false, lg: true })
+//   const { isOpen, onToggle } = useDisclosure()
+//   const [ToggleNav, setToggleNav] = React.useState(false)
+//   return (
+//     <Fade top>
+//       {isDesktop ? (
+//         <Box as="nav" px={{ base: '5', md: '8', lg: '12' }} py='6px' bg='blackAlpha.800'>
+//           <Flex justify="space-between" align="center">
+//             <Link href="/">
+//               <Image src={Logo} alt="" width={70} />
+//             </Link>
+//             <UnorderedList
+//               listStyleType="none"
+//               gap="15px"
+//               justifyContent="space-between"
+//               display={{ base: "flex", md: "flex" }}
+//               fontSize='12px'
+//             >
+//               <ListItem _hover={{ fontWeight: "700" }} >
+//                 <Link href="/timemap">Timemap</Link>
+//               </ListItem>
+//               <ListItem _hover={{ fontWeight: "700" }}>
+//                 <Link href="/about">About</Link>
+//               </ListItem>
+//               <ListItem _hover={{ fontWeight: "700" }}>
+//                 <Link href="/">Noogies</Link>
+//               </ListItem>
+//               <ListItem _hover={{ fontWeight: "700" }}>
+//                 <Link href="/vision">Vision</Link>
+//               </ListItem>
+//             </UnorderedList>
+//             <Flex alignItems="flex-end" flexDirection="column">
+//               {isOpen ? (
+//                 <IconButton
+//                   onClick={onToggle}
+//                   variant="unstyled"
+//                   display='flex'
+//                   justifyContent='center'
+//                   icon={<BsXLg fontSize="1.25rem" />}
+//                   aria-label="Open Menu"
+//                 />
+//               ) : (
+//                 <IconButton
+//                   onClick={onToggle}
+//                   variant="unstyled"
+//                   display='flex'
+//                   justifyContent='center'
+//                   icon={<FiMenu fontSize="1.5rem" />}
+//                   aria-label="Open Menu"
+//                 />
+//               )}
+
+//               {isOpen && (
+//                 <VStack position="absolute" top="60px" mr="20px">
+//                   <Link href='/'>
+//                     <Flex
+//                       border="1px"
+//                       borderColor="white"
+//                       p="10px"
+//                       color="white"
+//                       rounded="md"
+//                       gap="7px"
+//                       justify='space-between'
+//                       align="center"
+//                       width="100px"
+//                       cursor="pointer"
+//                       _hover={{ bg: "white", borderColor: 'white', color: "#000" }}
+//                     >
+//                       <Text fontSize="10px">Whitepaper</Text>
+//                       <FaFileAlt />
+//                     </Flex>
+//                   </Link>
+//                   <Link href='/' >
+//                     <Flex
+//                       border="1px"
+//                       borderColor="white"
+//                       p="10px"
+//                       color="white"
+//                       rounded="md"
+//                       gap="7px"
+//                       justify='space-between'
+//                       align="center"
+//                       width="100px"
+//                       cursor="pointer"
+//                       _hover={{ bg: "white", borderColor: 'white', color: "#000" }}
+//                     >
+//                       <Text fontSize="10px">Twitter</Text>
+//                       <FaTwitter />
+//                     </Flex>
+//                   </Link>
+//                   <Link href=''>
+//                     <Flex
+//                       border="1px"
+//                       borderColor="white"
+//                       p="10px"
+//                       color="white"
+//                       rounded="md"
+//                       gap="7px"
+//                       justify='space-between'
+//                       align="center"
+//                       width="100px"
+//                       cursor="pointer"
+//                       _hover={{ bg: "white", borderColor: 'white', color: "#000" }}
+//                     >
+//                       <Text fontSize="10px">Discord</Text>
+//                       <FaDiscord />
+//                     </Flex>
+//                   </Link>
+//                 </VStack>
+//               )}
+//             </Flex>
+//           </Flex>
+//         </Box>
+//       ) : (
+//         <Box>
+//           {ToggleNav ? (
+//             <Flex flexDir='column' gap='50px' w='100%' py='10px' pb='20px' px={4} color='white' bg='#000' h='100vh'>
+//               <Flex align='center' justify='space-between'>
+//                 <Link href="/">
+//                   <Image src={Logo} alt="" width={70} />
+//                 </Link>
+//                 {ToggleNav ? (
+//                   <IconButton
+//                     onClick={() => { setToggleNav(false) }}
+//                     variant="unstyled"
+//                     display='flex'
+//                     justifyContent='center'
+//                     icon={<BsXLg fontSize="1.25rem" />}
+//                     aria-label="Open Menu"
+//                   />
+//                 ) : (
+//                   <IconButton
+//                     onClick={() => { setToggleNav(true) }}
+//                     variant="unstyled"
+//                     display='flex'
+//                     justifyContent='center'
+//                     icon={<FiMenu fontSize="1.5rem" />}
+//                     aria-label="Open Menu"
+//                   />
+//                 )}
+//               </Flex>
+//               <Flex flexDir='column' align='left' gap='20px' color='white' fontSize={25} fontWeight={700}>
+//                 <Link href='/timemap'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Timemap</Text>
+//                 </Link>
+//                 <Link href='/about'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>About</Text>
+//                 </Link>
+//                 <Link href='/'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Noogies</Text>
+//                 </Link>
+//                 <Link href='/vision'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Vision</Text>
+//                 </Link>
+//                 <Link href='/'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Whitepaper</Text>
+//                 </Link>
+//                 <Link href='https://twitter.com/thenoogiesnft/' target='_blank'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Twitter</Text>
+//                 </Link>
+//                 <Link href='https://discord.com/' target='_blank'>
+//                   <Text py='2' px='1' cursor='pointer' _hover={{ color: 'whiteAlpha.500' }}>Discord(coming soon)</Text>
+//                 </Link>
+//                 <Box opacity='0.1'>
+//                   <Image src={Logo} alt="" width={350} />
+//                 </Box>
+//               </Flex>
+//             </Flex>
+//           ) : (
+//             <Box as="nav" px={{ base: '4', md: '8', lg: '12' }} py='10px' bg='blackAlpha.800'>
+//               <Flex justify='space-between' align='center'>
+//                 <Link href="/">
+//                   <Image src={Logo} alt="" width={70} />
+//                 </Link>
+//                 {ToggleNav ? (
+//                   <IconButton
+//                     onClick={() => { setToggleNav(false) }}
+//                     variant="unstyled"
+//                     icon={<BsXLg fontSize="1.25rem" />}
+//                     aria-label="Open Menu"
+//                   />
+//                 ) : (
+//                   <IconButton
+//                     onClick={() => { setToggleNav(true) }}
+//                     variant="unstyled"
+//                     icon={<FiMenu fontSize="1.5rem" />}
+//                     aria-label="Open Menu"
+//                   />
+//                 )}
+//               </Flex>
+//             </Box>)
+//           }
+//         </Box>
+//       )}
+
+//     </Fade>
+//   );
 // }
 
-// .nav-bar .logo {
-//   width: 100px;
-//   height: 100px;
-// }
+// export default Navbar;
 
-// .toggle-button {
-//   position: absolute;
-//   top: 2rem;
-//   right: 1rem;
-//   display: none;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   width: 30px;
-//   height: 21px;
-// }
 
-// .toggle-button .bar {
-//   height: 3px;
-//   width: 100%;
-//   background-color: var(--brand-color);
-//   border-radius: 10px;
-// }
-
-// 900PX
-// @media screen and (max-width: 900px) {
- 
-// .toggle-button {
-//   display: flex;
-// }
-// .nav-links {
-//   display: none;
-// }
-// .nav-bar {
-//   flex-direction: column;
-//   align-items: flex-start;
-// }
-// .nav-links ul {
-//   flex-direction: column;
-//   width: 100%;
-// }
-// .nav-links li {
-//   text-align: center;
-// }
-
-// .nav-links.active {
-//   display: block;
-//   margin: 0 auto;
-// }
