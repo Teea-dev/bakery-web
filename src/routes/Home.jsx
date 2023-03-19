@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Hero from "../assets/images/Header.jpg";
 import About from "../assets/images/about1.png";
 import About2 from "../assets/images/about2.jpg";
@@ -16,6 +16,8 @@ import Map from "../components/map";
 import Footer from "../components/footer";
 import menu from "../menu.json";
 import { Link } from "react-router-dom";
+import { useIntersection } from "react-use";
+import gsap from "gsap";
 
 import "../App.scss";
 // import pages
@@ -28,6 +30,36 @@ import Contact from "./Contact";
 import Navbar from "../components/Nav";
 
 function Home() {
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.9,
+  });
+
+  const fadeIn = (element) => {
+    gsap.to(element, 2, {
+      opacity: 1,
+      y: -40,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  };
+
+  const fadeOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -20,
+      ease: "power4.out",
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.9
+    ? fadeOut(".fade-in")
+    : fadeIn(".fade-in");
+
   return (
     <div className="container">
       <Navbar />
@@ -39,8 +71,8 @@ function Home() {
             of dishes
           </p>
           <Link className="button" to="/menu">
-          View menu
-        </Link>
+            View menu
+          </Link>
 
           <h3>Opening Times</h3>
           <p>Sunday - Saturday | 9am - 11pm</p>
@@ -68,8 +100,8 @@ function Home() {
             favourable.
           </p>
           <Link className="button" to="/menu">
-          View menu
-        </Link>
+            View menu
+          </Link>
         </div>
         <div className="item">
           <h3>2014</h3>
@@ -111,26 +143,26 @@ function Home() {
           Through True Rich Attended does no end it his mother
         </p>
       </div>
-      <div className="service">
+      <div  className="service">
         <div className="service-1">
-          <div className="cake">
+          <div ref={sectionRef} className="cake">
             <div className="icon">
-              <img src={cake} alt="" />
+              <img src={cake} className="fade-in" alt="" />
             </div>
 
-            <h2>Quafe Cake</h2>
-            <p>
+            <h2 className="fade-in">Quafe Cake</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div className="cocktail">
+          <div ref={sectionRef} className="cocktail">
             <div className="icon">
-              <img src={cocktail} alt="" />
+              <img className="fade-in" src={cocktail} alt="" />
             </div>
 
-            <h2>Cocktails</h2>
-            <p>
+            <h2 className="fade-in">Cocktails</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -138,22 +170,22 @@ function Home() {
         </div>
 
         <div className="service-2">
-          <div className="coffe">
+          <div ref={sectionRef} className="coffe">
             <div className="icon">
-              <img src={coffe} alt="" />
+              <img className="fade-in" src={coffe} alt="" />
             </div>
-            <h2>Coffe</h2>
-            <p>
+            <h2 className="fade-in">Coffe</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div className="grill">
+          <div ref={sectionRef} className="grill">
             <div className="icon">
-              <img src={grill} alt="" />
+              <img className="fade-in" src={grill} alt="" />
             </div>
-            <h2>Grill</h2>
-            <p>
+            <h2 className="fade-in">Grill</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -161,22 +193,22 @@ function Home() {
         </div>
 
         <div className="service-3">
-          <div className="burger">
+          <div ref={sectionRef} className="burger">
             <div className="icon">
-              <img src={burger} alt="" />
+              <img className="fade-in" src={burger} alt="" />
             </div>
-            <h2>Burger</h2>
-            <p>
+            <h2 className="fade-in">Burger</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div className="snack">
+          <div ref={sectionRef} className="snack">
             <div className="icon">
-              <img src={snack} alt="" />
+              <img className="fade-in" src={snack} alt="" />
             </div>
-            <h2>Snack</h2>
-            <p>
+            <h2 className="fade-in">Snack</h2>
+            <p className="fade-in">
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -222,20 +254,20 @@ function Home() {
           View menu
         </Link>
       </div>
-      <div className="inspirational-quote">
+      <div ref={sectionRef} className="inspirational-quote">
         <div className="quote">
-          <h1>
+          <h1 className="fade-in">
             "Edit this text to make it your own. To edit, simply click directly
             on the text to start adding your own words. You can move the text by
             dragging and dropping the text"
           </h1>
           <div className="author-info">
             <div className="author-name">
-              <h3>Joheny Andro</h3>
-              <h4 className="info">Bhubaneswar, Odisha</h4>
+              <h3 className="fade-in">Joheny Andro</h3>
+              <h4 className="fade-in info">Bhubaneswar, Odisha</h4>
             </div>
             <div className="profile">
-              <img src={snack} alt="profile-img" />
+              <img className="fade-in" src={snack} alt="profile-img" />
             </div>
           </div>
         </div>
@@ -312,7 +344,6 @@ function Home() {
       {/* <Blogpage/> */}
       {/* <Contact/>  */}
       {/* <Routes> */}
-      
     </div>
   );
 }

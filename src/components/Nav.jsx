@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./nav.scss";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo.svg";
-
+import gsap from "gsap";
+import { useIntersection } from "react-use";
 
 function Navbar() {
   const [visibility, setVisibility] = useState(false);
@@ -10,31 +11,60 @@ function Navbar() {
     setVisibility(false);
   }, []);
 
+  const anim = useRef(null);
+  const intersection = useIntersection(anim, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
+  });
+  const navIn = (element) => {
+    gsap.to(element, 1, {
+      opacity: 1,
+      y: -10,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.5,
+      },
+    });
+  };
+
+  const navOut = (element) => {
+    gsap.to(element, 1, {
+      opacity: 0,
+      y: -20,
+      ease: "power4.out",
+    });
+  };
+
+  intersection && intersection.intersectionRatio < 0.9
+    ? navOut(".nav-in")
+    : navIn(".nav-in");
+
   return (
     <>
       <nav className="Navbar">
-        <div className="NavbarContent">
+        <div ref={anim} className="  NavbarContent">
           <div className="NavbarContentHeader">
-            <img src={Logo} alt="" />
+            <img className="nav-in" src={Logo} alt="" />
           </div>
           <div className="links">
             <ul className={visibility ? "visibleNav" : "inVisibleNav"}>
-              <li className="mercury ">
+              <li className="nav-in mercury ">
                 <Link to="/">Home</Link>
               </li>
-              <li className="venus ">
+              <li className="nav-in  venus ">
                 <Link to="/menu">Menu</Link>
               </li>
-              <li className="earth ">
+              <li className=" nav-in earth ">
                 <Link to="/about">About Us</Link>
               </li>
-              <li className=" ">
+              <li className="nav-in ">
                 <Link to="/story">Our Story</Link>
               </li>
-              <li className=" jupiter ">
-                <Link to="/blog">Blog</Link>  
+              <li className="nav-in jupiter ">
+                <Link to="/blog">Blog</Link>
               </li>
-              <li className=" saturn ">
+              <li className="nav-in saturn ">
                 <Link to="/contact">Contact Us</Link>
               </li>
             </ul>
@@ -46,7 +76,6 @@ function Navbar() {
 }
 
 export default Navbar;
-
 
 // import { Box, Flex, Text, IconButton, useDisclosure, ListItem, VStack, UnorderedList, useBreakpointValue } from '@chakra-ui/react'
 // import * as React from 'react'
@@ -261,5 +290,3 @@ export default Navbar;
 // }
 
 // export default Navbar;
-
-
