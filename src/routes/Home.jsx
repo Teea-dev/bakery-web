@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Hero from "../assets/images/Header.jpg";
 import About from "../assets/images/about1.png";
 import About2 from "../assets/images/about2.jpg";
@@ -18,7 +18,7 @@ import menu from "../menu.json";
 import { Link } from "react-router-dom";
 import { useIntersection } from "react-use";
 import gsap from "gsap";
-
+import axios from "axios";
 import "../App.scss";
 // import pages
 import Menu from "./Menu";
@@ -30,35 +30,50 @@ import Contact from "./Contact";
 import Navbar from "../components/Nav";
 
 function Home() {
-  const sectionRef = useRef(null);
-  const intersection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.9,
-  });
+  //Testing Api
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.spoonacular.com/recipes/random?apiKey=aec5cc338c32493bbcc56578e47aeb4d&number=1&tags=vegetarian,dessert"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  const fadeIn = (element) => {
-    gsap.to(element, 2, {
-      opacity: 1,
-      y: -40,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  };
+  // Animations
+  // const sectionRef = useRef(null);
+  // const intersection = useIntersection(sectionRef, {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.9,
+  // });
 
-  const fadeOut = (element) => {
-    gsap.to(element, 1, {
-      opacity: 0,
-      y: -20,
-      ease: "power4.out",
-    });
-  };
+  // const fadeIn = (element) => {
+  //   gsap.to(element, 2, {
+  //     opacity: 1,
+  //     y: -40,
+  //     ease: "power4.out",
+  //     stagger: {
+  //       amount: 0.3,
+  //     },
+  //   });
+  // };
 
-  intersection && intersection.intersectionRatio < 0.9
-    ? fadeOut(".fade-in")
-    : fadeIn(".fade-in");
+  // const fadeOut = (element) => {
+  //   gsap.to(element, 1, {
+  //     opacity: 0,
+  //     y: -20,
+  //     ease: "power4.out",
+  //   });
+  // };
+
+  // intersection && intersection.intersectionRatio < 0.9
+  //   ? fadeOut(".fade-in")
+  //   : fadeIn(".fade-in");
 
   return (
     <div className="container">
@@ -143,26 +158,26 @@ function Home() {
           Through True Rich Attended does no end it his mother
         </p>
       </div>
-      <div  className="service">
+      <div className="service">
         <div className="service-1">
-          <div ref={sectionRef} className="cake">
+          <div className="cake">
             <div className="icon">
-              <img src={cake} className="fade-in" alt="" />
+              <img src={cake} className="" alt="" />
             </div>
 
-            <h2 className="fade-in">Quafe Cake</h2>
-            <p className="fade-in">
+            <h2>Quafe Cake</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div ref={sectionRef} className="cocktail">
+          <div className="cocktail">
             <div className="icon">
-              <img className="fade-in" src={cocktail} alt="" />
+              <img src={cocktail} alt="" />
             </div>
 
-            <h2 className="fade-in">Cocktails</h2>
-            <p className="fade-in">
+            <h2>Cocktails</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -170,22 +185,22 @@ function Home() {
         </div>
 
         <div className="service-2">
-          <div ref={sectionRef} className="coffe">
+          <div className="coffe">
             <div className="icon">
-              <img className="fade-in" src={coffe} alt="" />
+              <img className="" src={coffe} alt="" />
             </div>
-            <h2 className="fade-in">Coffe</h2>
-            <p className="fade-in">
+            <h2>Coffe</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div ref={sectionRef} className="grill">
+          <div className="grill">
             <div className="icon">
-              <img className="fade-in" src={grill} alt="" />
+              <img src={grill} alt="" />
             </div>
-            <h2 className="fade-in">Grill</h2>
-            <p className="fade-in">
+            <h2>Grill</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -193,22 +208,22 @@ function Home() {
         </div>
 
         <div className="service-3">
-          <div ref={sectionRef} className="burger">
+          <div className="burger">
             <div className="icon">
-              <img className="fade-in" src={burger} alt="" />
+              <img src={burger} alt="" />
             </div>
-            <h2 className="fade-in">Burger</h2>
-            <p className="fade-in">
+            <h2>Burger</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
           </div>
-          <div ref={sectionRef} className="snack">
+          <div className="snack">
             <div className="icon">
-              <img className="fade-in" src={snack} alt="" />
+              <img src={snack} alt="" />
             </div>
-            <h2 className="fade-in">Snack</h2>
-            <p className="fade-in">
+            <h2>Snack</h2>
+            <p>
               Through True Rich Attended does no end it his mother since
               favourable real had half every him
             </p>
@@ -225,8 +240,8 @@ function Home() {
         <div className="side-text">
           <p>
             Through True Rich Attended does no end it his mother since
-            favourable real had half every him case in packages enquire we up
-            ecstatic.. Through True Rich Attended does no end it his mother
+            favourable real had half every him packages enquire we up ecstatic..
+            Through True Rich Attended does no end it his mother
           </p>
         </div>
       </div>
@@ -254,20 +269,20 @@ function Home() {
           View menu
         </Link>
       </div>
-      <div ref={sectionRef} className="inspirational-quote">
+      <div className="inspirational-quote">
         <div className="quote">
-          <h1 className="fade-in">
+          <h1>
             "Edit this text to make it your own. To edit, simply click directly
             on the text to start adding your own words. You can move the text by
             dragging and dropping the text"
           </h1>
           <div className="author-info">
             <div className="author-name">
-              <h3 className="fade-in">Joheny Andro</h3>
-              <h4 className="fade-in info">Bhubaneswar, Odisha</h4>
+              <h3 className="">Joheny Andro</h3>
+              <h4 className=" info">Bhubaneswar, Odisha</h4>
             </div>
             <div className="profile">
-              <img className="fade-in" src={snack} alt="profile-img" />
+              <img  src={snack} alt="profile-img" />
             </div>
           </div>
         </div>
