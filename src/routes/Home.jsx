@@ -34,10 +34,10 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "https://api.spoonacular.com/recipes/random?apiKey=aec5cc338c32493bbcc56578e47aeb4d&number=1&tags=vegetarian,dessert"
+        "https://api.spoonacular.com/recipes/random?apiKey=aec5cc338c32493bbcc56578e47aeb4d&number=3&tags=dessert"
       )
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
