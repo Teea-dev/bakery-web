@@ -18,6 +18,7 @@ import menu from "../menu.json";
 import { Link } from "react-router-dom";
 import { useIntersection } from "react-use";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import axios from "axios";
 import "../App.scss";
 // import pages
@@ -28,6 +29,9 @@ import Blog from "./Blog";
 import Blogpage from "./BlogDetails";
 import Contact from "./Contact";
 import Navbar from "../components/Nav";
+import {motion} from 'framer-motion'
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
   //Testing Api
@@ -44,6 +48,11 @@ function Home() {
       });
   }, []);
 
+useEffect(() => {
+
+    
+  }, []);
+
   // Animations
   // const sectionRef = useRef(null);
   // const intersection = useIntersection(sectionRef, {
@@ -53,8 +62,8 @@ function Home() {
   // });
 
   // const fadeIn = (element) => {
-  //   gsap.to(element, 2, {
-  //     opacity: 1,
+  //   gsap.from(element, 2, {
+  //     opacity: 0,
   //     y: -40,
   //     ease: "power4.out",
   //     stagger: {
@@ -271,11 +280,23 @@ function Home() {
       </div>
       <div className="inspirational-quote">
         <div className="quote">
-          <h1>
+          <motion.h1 initial={{
+            opacity: 0,
+            y: 100
+          }} whileInView={{
+            opacity:1,
+            y:0,
+            transition:{
+              delay:1,
+              duration:1,
+              type:"spring",
+              mass:2,
+            }
+          }} transition>
             "Edit this text to make it your own. To edit, simply click directly
             on the text to start adding your own words. You can move the text by
             dragging and dropping the text"
-          </h1>
+          </motion.h1>
           <div className="author-info">
             <div className="author-name">
               <h3 className="">Joheny Andro</h3>
