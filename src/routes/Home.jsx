@@ -29,7 +29,7 @@ import Blog from "./Blog";
 import Blogpage from "./BlogDetails";
 import Contact from "./Contact";
 import Navbar from "../components/Nav";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,10 +48,7 @@ function Home() {
       });
   }, []);
 
-useEffect(() => {
-
-    
-  }, []);
+  useEffect(() => {}, []);
 
   // Animations
   // const sectionRef = useRef(null);
@@ -149,10 +146,44 @@ useEffect(() => {
         </div>
 
         <div className="item-5">
-          <img src={About} alt="know more image 1" />
+          <motion.img
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+              },
+            }}
+            src={About}
+            alt="know more image 1"
+          />
         </div>
         <div className="item-6">
-          <img src={About2} alt="know more image 2" />
+          <motion.img
+            initial={{
+              opacity: 0,
+              y: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 100,
+              transition: {
+                delay: 1.25,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+              },
+            }}
+            src={About2}
+            alt="know more image 2"
+          />
         </div>
       </div>
 
@@ -261,13 +292,29 @@ useEffect(() => {
           .map((key) => (
             <div key={key}>
               <div className="menu-item">
-                <span className="card">
+                <motion.span
+                  initial={{
+                    opacity: 0,
+                    y: 100,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delayChildren: 1,
+                      delay: 1,
+                      duration: 1,
+                      type: "tween",
+                    },
+                  }}
+                  className="card"
+                >
                   <img src={menu[key].image} alt={menu[key].product} />
                   <div className="description">
                     <h3>{menu[key].product}</h3>
                     <p>${menu[key].price}</p>
                   </div>
-                </span>
+                </motion.span>
               </div>
             </div>
           ))}
@@ -280,30 +327,65 @@ useEffect(() => {
       </div>
       <div className="inspirational-quote">
         <div className="quote">
-          <motion.h1 initial={{
-            opacity: 0,
-            y: 100
-          }} whileInView={{
-            opacity:1,
-            y:0,
-            transition:{
-              delay:1,
-              duration:1,
-              type:"spring",
-              mass:2,
-            }
-          }} transition>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+              },
+            }}
+          >
             "Edit this text to make it your own. To edit, simply click directly
             on the text to start adding your own words. You can move the text by
             dragging and dropping the text"
           </motion.h1>
           <div className="author-info">
             <div className="author-name">
-              <h3 className="">Joheny Andro</h3>
-              <h4 className=" info">Bhubaneswar, Odisha</h4>
+              <motion.h3
+                initial={{
+                  opacity: 0,
+                  y: 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 1,
+                    duration: 1,
+                    type: "tween",
+                  },
+                }}
+                className=""
+              >
+                Joheny Andro
+              </motion.h3>
+              <motion.h4 
+              initial={{
+                opacity: 0,
+                y: 100,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 1,
+                  duration: 1,
+                  type: "tween",
+                
+                },
+              }}
+              className=" info">Bhubaneswar, Odisha</motion.h4>
             </div>
             <div className="profile">
-              <img  src={snack} alt="profile-img" />
+              <img src={snack} alt="profile-img" />
             </div>
           </div>
         </div>
