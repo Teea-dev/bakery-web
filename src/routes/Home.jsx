@@ -21,13 +21,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import axios from "axios";
 import "../App.scss";
-// import pages
-import Menu from "./Menu";
-import Aboutpage from "./About";
-import Ourstory from "./Ourstory";
-import Blog from "./Blog";
-import Blogpage from "./BlogDetails";
-import Contact from "./Contact";
+
 import Navbar from "../components/Nav";
 import { motion } from "framer-motion";
 
@@ -47,39 +41,6 @@ function Home() {
         console.log(err);
       });
   }, []);
-
-  useEffect(() => {}, []);
-
-  // Animations
-  // const sectionRef = useRef(null);
-  // const intersection = useIntersection(sectionRef, {
-  //   root: null,
-  //   rootMargin: "0px",
-  //   threshold: 0.9,
-  // });
-
-  // const fadeIn = (element) => {
-  //   gsap.from(element, 2, {
-  //     opacity: 0,
-  //     y: -40,
-  //     ease: "power4.out",
-  //     stagger: {
-  //       amount: 0.3,
-  //     },
-  //   });
-  // };
-
-  // const fadeOut = (element) => {
-  //   gsap.to(element, 1, {
-  //     opacity: 0,
-  //     y: -20,
-  //     ease: "power4.out",
-  //   });
-  // };
-
-  // intersection && intersection.intersectionRatio < 0.9
-  //   ? fadeOut(".fade-in")
-  //   : fadeIn(".fade-in");
 
   return (
     <div className="container">
@@ -367,22 +328,24 @@ function Home() {
               >
                 Joheny Andro
               </motion.h3>
-              <motion.h4 
-              initial={{
-                opacity: 0,
-                y: 100,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 1,
-                  duration: 1,
-                  type: "tween",
-                
-                },
-              }}
-              className=" info">Bhubaneswar, Odisha</motion.h4>
+              <motion.h4
+                initial={{
+                  opacity: 0,
+                  y: 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 1,
+                    duration: 1,
+                    type: "tween",
+                  },
+                }}
+                className=" info"
+              >
+                Bhubaneswar, Odisha
+              </motion.h4>
             </div>
             <div className="profile">
               <img src={snack} alt="profile-img" />
@@ -390,16 +353,64 @@ function Home() {
           </div>
         </div>
         <div className="inspirational-image">
-          <img src={coffemaker} alt="coffemaker" />
+          <motion.img
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 1.5,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+                stiffness:150,
+              },
+            }}
+            src={coffemaker}
+            alt="coffemaker"
+          />
         </div>
       </div>
 
       <div className="blog">
         <div className="intro-text">
-          <h1>Read Our Latest Blog</h1>
+          <motion.h1
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 0.2,
+              duration: 1,
+              type: "tween",
+            },
+          }}
+          >Read Our Latest Blog</motion.h1>
         </div>
         <div className="blogs">
-          <div className="cards">
+          <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 1,
+              duration: 0.5,
+              type: "tween",
+            },
+          }}
+          className="cards">
             <div>
               <span>
                 <div className=" blog-description">
@@ -415,8 +426,23 @@ function Home() {
                 <img src={beans} alt="" />
               </span>
             </div>
-          </div>
-          <div className="cards">
+          </motion.div>
+          <motion.div
+          
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 1.5,
+              duration: 1,
+              type: "tween",
+            },
+          }}className="cards">
             <div>
               <span>
                 <div className=" blog-description">
@@ -432,8 +458,23 @@ function Home() {
                 <img src={ham} alt="" />
               </span>
             </div>
-          </div>
-          <div className="cards">
+          </motion.div>
+          <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 2,
+              duration: 1.5,
+              type: "tween",
+            },
+          }}
+          className="cards">
             <div>
               <span>
                 <div className=" blog-description">
@@ -450,7 +491,7 @@ function Home() {
                 <img src={bread} alt="" />
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <Map />
