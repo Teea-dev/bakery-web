@@ -25,8 +25,6 @@ import "../App.scss";
 import Navbar from "../components/Nav";
 import { motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
 function Home() {
   //Testing Api
   useEffect(() => {
@@ -42,21 +40,118 @@ function Home() {
       });
   }, []);
 
+  const word = "We serve high quality foods of all kinds.";
+  const animateWord = word.split("");
+
+  const word2 = "KNOW MORE ABOUT US.";
+  const animateAbout = word2.split("");
+
+  const word3 = "We source sustainable & line caught Foods.";
+  const animateAbout2 = word3.split("");
+
+  const container = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.04 * 0.1,
+      },
+    },
+  };
+
+  const child = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+  const heroItems = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 6,
+        type: "spring",
+        mass: 2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
+
   return (
     <div className="container">
       <Navbar />
       <div className="hero">
         <div className="hero-text">
-          <h1>We serve high quality foods of all kinds.</h1>
-          <p>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            {animateWord.map((animateWord, index) => {
+              return (
+                <motion.span
+                  key={index}
+                  variants={child}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {animateWord}
+                </motion.span>
+              );
+            })}
+          </motion.div>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 4,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+              },
+            }}
+          >
             Our food is made with fresh ingredients and we have a great variety
             of dishes
-          </p>
+          </motion.p>
           <Link className="button" to="/menu">
             View menu
           </Link>
 
-          <h3>Opening Times</h3>
+          <motion.h3
+            variants={heroItems}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ delay: 6, duration: 1 }}
+          >
+            Opening Times
+          </motion.h3>
           <p>Sunday - Saturday | 9am - 11pm</p>
           <h3> Location</h3>
           <p> Master Canteen, BBSR, Odisha 752054</p>
@@ -64,14 +159,65 @@ function Home() {
           <p> +91 1234567890</p>
         </div>
         <div className="hero-image">
-          <img src={Hero} alt="hero" />
+          <motion.img
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 2,
+                duration: 1,
+                type: "spring",
+                mass: 2,
+              },
+            }}
+            src={Hero}
+            alt="hero"
+          />
         </div>
       </div>
       <div className="about-us">
-        <div className="item-1">
-          <h3 className="about">KNOW MORE ABOUT US</h3>
-          <h1>We source sustainable & line caught Foods</h1>
-        </div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.5, duration: 1 }}
+          className="item-1"
+        >
+          {animateAbout.map((animateAbout, index) => {
+            return (
+              <motion.span
+                className="about"
+                key={index}
+                variants={child}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {animateAbout}
+              </motion.span>
+            );
+          })}
+          <div>
+            {animateAbout2.map((animateAbout2, index) => {
+              return (
+                <motion.span
+                  className="about2"
+                  key={index}
+                  variants={child}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {animateAbout2}
+                </motion.span>
+              );
+            })}
+          </div>
+        </motion.div>
         <div className="item">
           <h3>10+ People</h3>
           <p>
@@ -366,7 +512,7 @@ function Home() {
                 duration: 1,
                 type: "spring",
                 mass: 2,
-                stiffness:150,
+                stiffness: 150,
               },
             }}
             src={coffemaker}
@@ -378,39 +524,42 @@ function Home() {
       <div className="blog">
         <div className="intro-text">
           <motion.h1
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delayChildren: 1,
-              delay: 0.2,
-              duration: 1,
-              type: "tween",
-            },
-          }}
-          >Read Our Latest Blog</motion.h1>
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delayChildren: 1,
+                delay: 0.2,
+                duration: 1,
+                type: "tween",
+              },
+            }}
+          >
+            Read Our Latest Blog
+          </motion.h1>
         </div>
         <div className="blogs">
           <motion.div
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delayChildren: 1,
-              delay: 1,
-              duration: 0.5,
-              type: "tween",
-            },
-          }}
-          className="cards">
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delayChildren: 1,
+                delay: 1,
+                duration: 0.5,
+                type: "tween",
+              },
+            }}
+            className="cards"
+          >
             <div>
               <span>
                 <div className=" blog-description">
@@ -428,21 +577,22 @@ function Home() {
             </div>
           </motion.div>
           <motion.div
-          
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delayChildren: 1,
-              delay: 1.5,
-              duration: 1,
-              type: "tween",
-            },
-          }}className="cards">
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delayChildren: 1,
+                delay: 1.5,
+                duration: 1,
+                type: "tween",
+              },
+            }}
+            className="cards"
+          >
             <div>
               <span>
                 <div className=" blog-description">
@@ -460,21 +610,22 @@ function Home() {
             </div>
           </motion.div>
           <motion.div
-          initial={{
-            opacity: 0,
-            y: 100,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              delayChildren: 1,
-              delay: 2,
-              duration: 1.5,
-              type: "tween",
-            },
-          }}
-          className="cards">
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delayChildren: 1,
+                delay: 2,
+                duration: 1.5,
+                type: "tween",
+              },
+            }}
+            className="cards"
+          >
             <div>
               <span>
                 <div className=" blog-description">
