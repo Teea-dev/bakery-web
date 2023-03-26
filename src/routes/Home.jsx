@@ -49,6 +49,9 @@ function Home() {
   const word3 = "We source sustainable & line caught Foods.";
   const animateAbout2 = word3.split("");
 
+  const word4 = "WHAT WE ARE SERVING.";
+  const serving = word4.split("");
+
   const container = {
     hidden: { opacity: 1 },
     visible: {
@@ -93,6 +96,47 @@ function Home() {
     hidden: {
       opacity: 0,
       y: 100,
+    },
+  };
+  const location = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 7,
+        type: "spring",
+        mass: 2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
+  const contact = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 7,
+        type: "spring",
+        mass: 2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+  };
+  const serve = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 2,
+        type: "spring",
+        mass: 2,
+      },
     },
   };
 
@@ -148,15 +192,28 @@ function Home() {
             variants={heroItems}
             initial="hidden"
             whileInView="visible"
-            transition={{ delay: 6, duration: 1 }}
           >
             Opening Times
           </motion.h3>
-          <p>Sunday - Saturday | 9am - 11pm</p>
-          <h3> Location</h3>
-          <p> Master Canteen, BBSR, Odisha 752054</p>
-          <h3>Call Us</h3>
-          <p> +91 1234567890</p>
+          <motion.p variants={heroItems} initial="hidden" whileInView="visible">
+            Sunday - Saturday | 9am - 11pm
+          </motion.p>
+
+          <motion.h3 variants={location} initial="hidden" whileInView="visible">
+            {" "}
+            Location
+          </motion.h3>
+          <motion.p variants={location} initial="hidden" whileInView="visible">
+            {" "}
+            Master Canteen, BBSR, Odisha 752054
+          </motion.p>
+          <motion.h3 variants={contact} initial="hidden" whileInView="visible">
+            Call Us
+          </motion.h3>
+          <motion.p variants={contact} initial="hidden" whileInView="visible">
+            {" "}
+            +91 1234567890
+          </motion.p>
         </div>
         <div className="hero-image">
           <motion.img
@@ -218,7 +275,23 @@ function Home() {
             })}
           </div>
         </motion.div>
-        <div className="item">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 1,
+              duration: 0.5,
+              type: "tween",
+            },
+          }}
+          className="item"
+        >
           <h3>10+ People</h3>
           <p>
             We are small team
@@ -230,8 +303,24 @@ function Home() {
           <Link className="button" to="/menu">
             View menu
           </Link>
-        </div>
-        <div className="item">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 1.5,
+              duration: 0.5,
+              type: "tween",
+            },
+          }}
+          className="item"
+        >
           <h3>2014</h3>
           <p>
             We are from
@@ -240,8 +329,24 @@ function Home() {
             Through True Rich Attended does no end it his mother since
             favourable.
           </p>
-        </div>
-        <div className="item">
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delayChildren: 1,
+              delay: 2,
+              duration: 0.5,
+              type: "tween",
+            },
+          }}
+          className="item"
+        >
           <h3>200K</h3>
           <p>
             We served
@@ -250,7 +355,7 @@ function Home() {
             Through True Rich Attended does no end it his mother since
             favourable.
           </p>
-        </div>
+        </motion.div>
 
         <div className="item-5">
           <motion.img
@@ -295,10 +400,32 @@ function Home() {
       </div>
 
       <div className="serve">
-        <div className="serve-1">
-          <h3 className="about-1">WHAT WE ARE SERVING</h3>
-          <h1>We all have to eat, so why not do it beautifully.</h1>
-        </div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.5, duration: 1 }}
+          className="serve-1"
+        >
+          {serving.map((serving, index) => {
+            return (
+              <motion.span
+                className="about-1"
+                key={index}
+                variants={child}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {serving}
+              </motion.span>
+            );
+          })}
+
+          <motion.h1 variants={serve} initial="hidden" whileInView="visible">
+            We all have to eat, so why not do it beautifully.
+          </motion.h1>
+        </motion.div>
         <p>
           Through True Rich Attended does no end it his mother since favourable
           real had half every him case in packages enquire we up ecstatic..
