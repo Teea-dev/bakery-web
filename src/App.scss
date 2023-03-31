@@ -164,15 +164,16 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   .menu-intro {
-    h3 {
+    .animated-menu{
       font-family: var(--heading-font);
       color: var(--other-color);
     }
-    h1 {
+    .animated-menu1{
       font-family: var(--heading-font);
       color: var(--heading-color);
       font-size: 46px;
       width: 90%;
+      
     }
     h4 {
       font-family: var(--heading-font);

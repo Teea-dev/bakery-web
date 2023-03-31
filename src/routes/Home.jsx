@@ -507,8 +507,8 @@ function Home() {
 
       <div className="menu-heading">
         <div className="menu-intro">
-          <h3> OUR MENU</h3>
-          <h1>Discover our menu chart</h1>
+          <h3 className="animated-menu"> OUR MENU</h3>
+          <h1 className="animated-menu1">Discover our menu chart</h1>
           <h4>Most popular picks</h4>
         </div>
         <div className="side-text">
