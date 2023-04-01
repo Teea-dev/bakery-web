@@ -15,7 +15,7 @@ const About = () => {
       <div className="about-us">
         <div className="item-1">
           <h3 className="about">KNOW MORE ABOUT US</h3>
-          <h1>We source sustainable & line caught Foods</h1>
+          <h1 className="about2">We source sustainable & line caught Foods</h1>
         </div>
         <div className="item">
           <h3>10+ People</h3>

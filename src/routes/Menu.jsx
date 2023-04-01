@@ -9,9 +9,6 @@ const Menu = () => {
   const menu0 = "OUR MENU";
   const animatedMenu = menu0.split("");
 
-
-
-  
   const menu1 = "Discover our menu chart";
   const animatedMenu1 = menu1.split("");
 
@@ -58,6 +55,7 @@ const Menu = () => {
             animate="visible"
             className="menu-intro"
           >
+
             {animatedMenu.map((animatedMenu, index) => {
               return (
                 <motion.span
@@ -73,7 +71,7 @@ const Menu = () => {
               );
             })}
 
-            <div>
+            <div className="animated-menu-top"> 
               {animatedMenu1.map((animatedMenu1, index) => {
                 return (
                   <motion.span

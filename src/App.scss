@@ -71,7 +71,7 @@
     grid-column: 5/6;
     grid-row: 1/4;
   }
-  .about2{
+  .about2 {
     font-family: var(--heading-font);
     color: var(--heading-color);
     font-size: 46px;
@@ -164,16 +164,18 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   .menu-intro {
-    .animated-menu{
+    .animated-menu {
       font-family: var(--heading-font);
       color: var(--other-color);
     }
-    .animated-menu1{
-      font-family: var(--heading-font);
-      color: var(--heading-color);
-      font-size: 46px;
-      width: 90%;
-      
+    .animated-menu-top {
+      width: 70%;
+
+      .animated-menu1 {
+        font-family: var(--heading-font);
+        color: var(--heading-color);
+        font-size: 46px;
+      }
     }
     h4 {
       font-family: var(--heading-font);
@@ -512,7 +514,7 @@
       display: flex;
       gap: 20px;
       .article-image {
-        flex: 1 ;
+        flex: 1;
         img {
           width: 100%;
           height: fit-content;
@@ -717,7 +719,7 @@
         font-size: 14px;
       }
     }
-    .item-6{
+    .item-6 {
       display: none;
     }
   }
