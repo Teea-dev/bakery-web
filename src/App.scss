@@ -167,15 +167,16 @@
     .animated-menu {
       font-family: var(--heading-font);
       color: var(--other-color);
-    }
-    .animated-menu-top {
-      width: 70%;
-
-      .animated-menu1 {
+      .animated-menu1
+       {
         font-family: var(--heading-font);
         color: var(--heading-color);
         font-size: 46px;
       }
+    }
+    .animated-menu-top {
+      width: 70%;
+
     }
     h4 {
       font-family: var(--heading-font);
@@ -791,6 +792,7 @@
       h1 {
         font-size: 30px;
         width: 100%;
+        color: var(--heading-color);
       }
     }
   }

@@ -16,9 +16,7 @@ import Map from "../components/map";
 import Footer from "../components/footer";
 import menu from "../menu.json";
 import { Link } from "react-router-dom";
-import { useIntersection } from "react-use";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import axios from "axios";
 import "../App.scss";
 
