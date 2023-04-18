@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Hero from "../assets/images/Header.jpg";
 import About from "../assets/images/about1.png";
 import About2 from "../assets/images/about2.jpg";
